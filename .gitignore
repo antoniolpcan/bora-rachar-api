@@ -1,0 +1,53 @@
+## Visual Studio / .NET Core / C#
+*.user
+*.userosscache
+*.sln.docstates
+
+# Pastas de Build e Saída de Compilação
+[Bb]in/
+[Oo]bj/
+[LGs]og/
+[LGs]ogs/
+publish/
+for-deploy/
+
+# Arquivos de usuário e cache do Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userquery
+*.docstates
+
+# Arquivos temporários e de Testes
+*.swp
+*~
+*.bak
+*.tmp
+*.cache
+*.log
+TestResults/
+[Tt]est[Rr]esult*/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Configurações com Segredos Locais (se usar)
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
+*.secrets.json
+
+# Pacotes NuGet baixados localmente
+*.nupkg
+packages/
+**/packages/*
+!**/packages/build/
+
+# Artefatos do Entity Framework (se gerar scripts temporários)
+*.dag
+
+# Mac OS / Windows OS system files
+.DS_Store
+Thumbs.db
