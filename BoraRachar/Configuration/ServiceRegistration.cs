@@ -49,7 +49,7 @@ namespace BoraRachar.Configuration
             });
             services.AddCors(o => o.AddDefaultPolicy(p => p
                 .WithOrigins(configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:5173" })
-                .AllowAnyHeader().AllowAnyMethod()));
+                .AllowAnyHeader().AllowAnyMethod().WithExposedHeaders("Retry-After")));
             return services;
         }
     }

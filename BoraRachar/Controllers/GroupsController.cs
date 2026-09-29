@@ -3,6 +3,8 @@ using BoraRachar.Models;
 using BoraRachar.Security;
 using BoraRachar.Services;
 using Microsoft.AspNetCore.Mvc;
+using BoraRachar.Configuration;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BoraRachar.Controllers
 {
@@ -22,8 +24,10 @@ namespace BoraRachar.Controllers
         }
 
         [HttpPost]
+        [EnableRateLimiting(RateLimitConfiguration.CreateGroupPolicy)]
         [ProducesResponseType(typeof(CreatedGroupResponseDto), 201)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
+        [ProducesResponseType(typeof(ProblemDetails), 429)]
         public async Task<ActionResult<CreatedGroupResponseDto>> Create(CreateGroupDto dto, CancellationToken cancellationToken)
         {
             var result = await service.CreateAsync(dto.Name, dto.Members, cancellationToken);
