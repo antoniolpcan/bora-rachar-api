@@ -62,4 +62,4 @@ jobs:
           app-name: 'bora-rachar-api'
           slot-name: 'Production'
           package: .
-          
+          startup-command: 'dotnet BoraRachar.dll'
